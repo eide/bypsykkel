@@ -1,0 +1,24 @@
+html
+  head
+    title Bypsykkel
+    style
+      include style.css
+
+  body
+    header
+      h1 Bypsykkel
+
+    main
+      table
+        thead
+          tr
+            th Stativ
+            th Ledige sykler
+            th Ledige låser
+
+        tbody
+          each station in stations
+            tr
+              td= station.title
+              td= station.bikes
+              td= station.locks

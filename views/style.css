@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0 2rem;
+}
+
+main {
+}
+
+table {
+  border-spacing: 0.5rem;
+}

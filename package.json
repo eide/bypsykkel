@@ -1,0 +1,19 @@
+{
+  "name": "bypsykkel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Magnus Eide <eide@katafon.net>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-fetch": "^2.2.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.2"
+  }
+}
