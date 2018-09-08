@@ -29,6 +29,12 @@ function getStations() {
 function getAvailability() {
   return bikeFetch("stations/availability")
     .then(res => res.json())
+    .then(json => {
+      if (json.error) {
+        throw new Error(json.error);
+      }
+      return json;
+    })
     .then(data =>
       data.stations.reduce(
         (acc, curr) => acc.set(curr.id, curr.availability),
@@ -36,9 +42,7 @@ function getAvailability() {
       )
     )
     .catch(err => {
-      throw new Error(
-        "getAvailability failed. Is clientIdentifer set in config?"
-      );
+      throw err;
     });
 }
 
