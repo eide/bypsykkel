@@ -7,13 +7,13 @@ const app = express();
 app.set("views", "./views");
 app.set("view engine", "pug");
 
-app.use(express.static('static'));
+app.use(express.static("static"));
 
 app.get("/", (req, res) => {
   Promise.all([config(), api.get()]).then(([cfg, stations]) => {
     res.render("index", {
       stations,
-      mapsApiKey: cfg.mapsApiKey,
+      mapsApiKey: cfg.mapsApiKey
     });
   });
 });

@@ -19,8 +19,7 @@ function bikeFetch(path) {
 }
 
 function getStations() {
-  return bikeFetch("stations")
-    .then(data => data.stations)
+  return bikeFetch("stations").then(data => data.stations);
 }
 
 function getAvailability() {
@@ -68,6 +67,6 @@ module.exports = {
   _test: {
     bikeFetch,
     getStations,
-    getAvailability,
+    getAvailability
   }
 };
