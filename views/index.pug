@@ -1,14 +1,27 @@
 html
   head
     title Bypsykkel
-    style
-      include style.css
+    link(
+      type="text/css"
+      rel="stylesheet"
+      href="/style.css"
+    )
+    script.
+      window.stations = JSON.parse(`!{JSON.stringify(stations)}`);
+    script(
+      src='/mappy.js'
+    )
+    script(
+      async
+      src=`https://maps.googleapis.com/maps/api/js?key=${mapsApiKey}&callback=initMap`
+    )
 
   body
     header
       h1 Bypsykkel
 
     main
+      div(class='map')
       table
         thead
           tr

@@ -1,15 +1,19 @@
 const express = require("express");
 const api = require("./api");
+const config = require("./config");
 
 const app = express();
 
 app.set("views", "./views");
 app.set("view engine", "pug");
 
+app.use(express.static('static'));
+
 app.get("/", (req, res) => {
-  api.get().then(stations => {
+  Promise.all([config(), api.get()]).then(([cfg, stations]) => {
     res.render("index", {
-      stations
+      stations,
+      mapsApiKey: cfg.mapsApiKey,
     });
   });
 });

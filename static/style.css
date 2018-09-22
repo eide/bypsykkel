@@ -14,3 +14,8 @@ main {
 table {
   border-spacing: 0.5rem;
 }
+
+.map {
+  height: 50vh;
+  width: 50vw;
+}

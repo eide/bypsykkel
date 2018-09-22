@@ -1,3 +1,4 @@
 {
-    "clientIdentifier": "INSERT CLIENT IDENTIFIER HERE"
+    "clientIdentifier": "INSERT CLIENT IDENTIFIER HERE",
+    "mapsApiKey": "INSERT GOOGLE MAPS API KEY HERE"
 }

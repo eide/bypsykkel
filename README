@@ -3,7 +3,7 @@ Prerequisites: node, yarn
 How to run:
  - `yarn install`
  - `cp config.json.example config.json`
- - Edit config.json and add your client identifier
+ - Edit config.json and add your client identifier and google maps api key
  - Run with `yarn start`
  - Go to http://localhost:3000/ in your browser
 
