@@ -6,3 +6,5 @@ How to run:
  - Edit config.json and add your client identifier
  - Run with `yarn start`
  - Go to http://localhost:3000/ in your browser
+
+Testin with `yarn test`

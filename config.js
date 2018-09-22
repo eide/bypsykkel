@@ -10,7 +10,7 @@ function readConfig() {
       } else {
         newConfig = JSON.parse(data);
         if (!newConfig.clientIdentifier) {
-          reject("clientIdentifer not set in config.json");
+          reject(new Error("clientIdentifier not set in config.json"));
         } else {
           config = newConfig;
           resolve(config);

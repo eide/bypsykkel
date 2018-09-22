@@ -8,6 +8,7 @@ function bikeFetch(path) {
         headers: { "Client-Identifier": config.clientIdentifier }
       })
     )
+    .then(res => res.json())
     .catch(err => {
       console.error(
         'Could not read config. Please rename "config.json.example" and add your client identifier.',
@@ -19,16 +20,11 @@ function bikeFetch(path) {
 
 function getStations() {
   return bikeFetch("stations")
-    .then(res => res.json())
     .then(data => data.stations)
-    .catch(err => {
-      throw new Error("getStations failed. Is clientIdentifer set in config?");
-    });
 }
 
 function getAvailability() {
   return bikeFetch("stations/availability")
-    .then(res => res.json())
     .then(json => {
       if (json.error) {
         throw new Error(json.error);
@@ -67,5 +63,11 @@ function get() {
 }
 
 module.exports = {
-  get
+  get,
+
+  _test: {
+    bikeFetch,
+    getStations,
+    getAvailability,
+  }
 };
